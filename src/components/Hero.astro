@@ -1,0 +1,14 @@
+---
+import { Image } from 'astro:assets';
+import { contentImages as images } from '../data/content-images';
+---
+<section class="home-hero">
+  <Image class="home-hero-image" src={images.homeHero} alt="Industrial buildings and landscaped campus" widths={[768, 1280, 1672]} sizes="100vw" format="webp" loading="eager" fetchpriority="high" />
+  <div class="container home-hero-content">
+    <p class="eyebrow">PHASORION · MAGNETIC MATERIALS</p>
+    <h1>Magnetic Materials,<br /> Cores and Power<br /> Magnetic Components</h1>
+    <p class="hero-summary">Nanocrystalline, amorphous and electrical steel solutions for filtering, inductors, reactors, transformer magnetic components and motor applications.</p>
+    <div class="hero-actions"><a class="button" href="/products/">Explore Products <span aria-hidden="true">↗</span></a><a class="hero-link" href="/products/nanocrystalline/">Discover Nanocrystalline →</a></div>
+  </div>
+  <div class="hero-materials container"><span>01 / Nanocrystalline</span><span>02 / Electrical Steel</span><span>03 / Amorphous</span></div>
+</section>

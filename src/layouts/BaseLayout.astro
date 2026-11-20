@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import '../styles/components.css';
+import '../styles/editorial.css';
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+
+interface Props {
+    title?: string;
+    description?: string;
+    ogTitle?: string;
+    ogDescription?: string;
+    noindex?: boolean;
+}
+
+const {
+    title = 'Phasorion | Magnetic Materials, Cores and Power Magnetic Components',
+    description = 'Phasorion focuses on nanocrystalline, electrical steel and amorphous materials, cores and power magnetic components for power electronics and industrial applications.',
+    ogTitle = title,
+    ogDescription = description,
+    noindex = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		<title>{title}</title>
+
+		<meta
+			name="description"
+			content={description}
+		/>
+
+		<link rel="icon" href="/favicon.ico" />
+
+		<meta property="og:title" content={ogTitle} />
+		<meta
+			property="og:description"
+			content={ogDescription}
+		/>
+		<meta property="og:type" content="website" />
+        {noindex && <meta name="robots" content="noindex, follow" />}
+	</head>
+    <body>
+		<Header />
+
+		<main class="site-main">
+			<slot />
+		</main>
+
+		<Footer />
+    </body>
+</html>

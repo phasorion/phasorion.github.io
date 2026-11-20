@@ -1,0 +1,16 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import ProductsSubnav from '../components/ProductsSubnav.astro';
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'Products | Phasorion',
+  description = 'Nanocrystalline, electrical steel and amorphous materials, cores and magnetic components organized by material family and product form.',
+} = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <ProductsSubnav />
+  <slot />
+</BaseLayout>

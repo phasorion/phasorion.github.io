@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ContentSection from '../components/ContentSection.astro';
+import ContentImage from '../components/ContentImage.astro';
+import ProductPortfolio from '../components/ProductPortfolio.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import { contentImages as images } from '../data/content-images';
+---
+<BaseLayout>
+  <Hero />
+  <ContentSection eyebrow="WHO WE ARE" title="Advanced magnetic materials. Application-ready cores and components." split>
+    <p>Phasorion focuses on magnetic materials, cores and power magnetic components for power electronics and industrial applications.</p>
+    <p class="editorial-detail">Material expertise · Application support · Production execution</p>
+    <a class="text-link" href="/about/">About Phasorion <span aria-hidden="true">↗</span></a>
+    <ContentImage slot="media" src={images.homeWho} alt="An engineer examining a magnetic core assembly" />
+  </ContentSection>
+  <ContentSection id="product-portfolio" eyebrow="PRODUCT PORTFOLIO" title="Material Platforms" tone="soft">
+    <p>A focused portfolio organized by material family and product form.</p>
+    <ProductPortfolio />
+  </ContentSection>
+  <ContentSection eyebrow="NANOCRYSTALLINE" title="Materials. Cores. Magnetic components." split reverse>
+    <p>From material and ribbon to standard and custom cores, filter magnetic components, inductors, reactors and transformer magnetic components.</p>
+    <a class="text-link" href="/products/nanocrystalline/">Explore our primary material platform <span aria-hidden="true">↗</span></a>
+    <ContentImage slot="media" src={images.nanoComponents} alt="Nanocrystalline cores and wound magnetic components in a range of forms" />
+  </ContentSection>
+  <ContentSection eyebrow="CAPABILITIES" title="From material choice to production-ready magnetic products." tone="dark" split>
+    <p>Material selection · Design support · Prototyping · Production</p>
+    <a class="text-link" href="/capabilities/">Explore Capabilities <span aria-hidden="true">↗</span></a>
+    <ContentImage slot="media" src={images.homeCapabilities} alt="Laser processing of a metal lamination" />
+  </ContentSection>
+  <ContactCTA />
+</BaseLayout>

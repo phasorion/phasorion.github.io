@@ -1,0 +1,21 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title: string;
+  tone?: 'light' | 'soft' | 'dark';
+  split?: boolean;
+  reverse?: boolean;
+}
+const { id, eyebrow, title, tone = 'light', split = false, reverse = false } = Astro.props;
+---
+<section id={id} class:list={['editorial-section', `editorial-section--${tone}`, { 'editorial-section--split': split, 'editorial-section--reverse': reverse }]}>
+  <div class="container editorial-inner">
+    <div class="editorial-copy">
+      {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+      <h2>{title}</h2>
+      <slot />
+    </div>
+    {Astro.slots.has('media') && <div class="editorial-media"><slot name="media" /></div>}
+  </div>
+</section>

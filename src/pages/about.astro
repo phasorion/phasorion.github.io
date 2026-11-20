@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContentSection from '../components/ContentSection.astro';
+import ContentImage from '../components/ContentImage.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import { contentImages as images } from '../data/content-images';
+---
+<BaseLayout title="About Phasorion | Magnetic Materials & Components" description="Phasorion connects magnetic-material expertise, product engineering and manufacturing integration for power-electronics and industrial applications.">
+  <section class="page-intro"><div class="container intro-grid"><div><p class="eyebrow">ABOUT PHASORION</p><h1>Focused on magnetic materials, cores and power magnetic components.</h1></div><ContentImage src={images.aboutReception} alt="Phasorion reception desk with company sign" priority /></div></section>
+  <ContentSection eyebrow="WHO WE ARE" title="Material expertise connected to industrial execution">
+    <p>Phasorion is an industrial technology company serving power-electronics and industrial applications through magnetic-material expertise, product engineering and manufacturing integration.</p><p>We help customers move from requirements and samples to stable, production-ready supply.</p>
+  </ContentSection>
+  <ContentSection eyebrow="VISION & MISSION" title="A partner for magnetic products" tone="soft" split>
+    <h3>Our vision</h3><p>To be a trusted partner for advanced magnetic materials, cores and power magnetic components.</p><h3>Our mission</h3><p>We connect material knowledge, application engineering and industrial execution to deliver reliable magnetic products for customer applications.</p>
+    <ContentImage slot="media" src={images.aboutVision} alt="Illustration of a motor and magnetic field paths" />
+  </ContentSection>
+  <ContentSection eyebrow="GLOBAL FOOTPRINT" title="Global resources. Regional execution." split>
+    <p>Engineering, manufacturing and supply capabilities across key industrial regions.</p>
+    <ul class="editorial-list"><li><strong>China</strong> — R&D, engineering, manufacturing and supply chain</li><li><strong>North America</strong> — R&D</li><li><strong>Mexico</strong> — Manufacturing</li><li><strong>Southeast Asia</strong> — Manufacturing capability in Vietnam and Malaysia</li></ul>
+    <ContentImage slot="media" src={images.aboutFootprint} alt="World map accompanying Phasorion's regional footprint" diagram />
+  </ContentSection>
+  <ContactCTA />
+</BaseLayout>

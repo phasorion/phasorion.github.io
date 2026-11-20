@@ -1,0 +1,30 @@
+---
+import ProductsLayout from '../../layouts/ProductsLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import ContentImage from '../../components/ContentImage.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import { contentImages as images } from '../../data/content-images';
+---
+<ProductsLayout title="Amorphous Materials & Magnetic Cores | Phasorion" description="Amorphous ribbon, magnetic cores and high-speed motor cores for efficient magnetic and motor applications.">
+  <section class="page-intro"><div class="container intro-grid"><div><p class="eyebrow">PRODUCTS / AMORPHOUS</p><h1>Amorphous Materials & Cores</h1><p class="lead">Amorphous materials and cores for efficient magnetic and motor applications.</p></div><ContentImage src={images.amorphousCores} alt="Amorphous motor cores in different geometries" priority /></div></section>
+  <ContentSection eyebrow="MATERIAL EXPERTISE" title="Thin ribbon. Practical magnetic forms." split>
+    <p>Iron-based amorphous alloys are soft magnetic materials with a non-crystalline structure, produced by rapidly cooling molten alloy into thin ribbon.</p>
+    <p>Their high permeability, low coercivity and low core losses make them attractive for efficient motor designs, particularly at higher electrical frequencies. Multilayer lamination and subsequent core processing turn the thin ribbon into practical forms for motor manufacturing.</p>
+    <ContentImage slot="media" src={images.amorphousPlant3} alt="Ribbon material processing equipment" />
+  </ContentSection>
+  <ContentSection eyebrow="PRODUCT FORMS" title="Materials, magnetic cores and high-speed motor cores" tone="soft">
+    <div class="image-grid image-grid--three amorphous-product-forms"><ContentImage src={images.amorphousProduct4} alt="Amorphous motor core" caption="Motor cores" /><ContentImage src={images.amorphousCore} alt="Laminated amorphous motor core" caption="Laminated cores" /><ContentImage src={images.amorphousRing} alt="Ring-shaped amorphous core geometry" caption="Custom core forms" /></div>
+    <p>Multilayer laminated ribbon and finished motor cores support different stages of the manufacturing process. Core geometry and processing can be reviewed against customer drawings and project requirements.</p>
+  </ContentSection>
+  <ContentSection eyebrow="APPLICATIONS" title="Magnetic performance at higher electrical frequencies">
+    <p>Amorphous cores are suited to motor applications where high electrical frequencies make iron losses a significant design concern. Suitably designed amorphous stator cores can reduce iron losses and the heat they generate.</p>
+    <p>Target applications include high-speed spindle motors, compressor motors, pumps and fans, generators and specialized propulsion systems. Actual benefits depend on the material grade, operating conditions and finished core design.</p>
+    <div class="image-grid image-grid--two"><ContentImage src={images.amorphousSpindle} alt="Cutaway illustration of a high-speed spindle motor" caption="High-speed spindle motor application" /><ContentImage src={images.amorphousPropulsion} alt="Cutaway illustration of a propulsion system" caption="Specialized propulsion application" /></div>
+  </ContentSection>
+  <ContentSection eyebrow="MANUFACTURING" title="From ribbon processing to finished cores" tone="soft">
+    <p>Amorphous core production connects ribbon processing, heat treatment and subsequent core processing. These stages turn thin material into practical forms for magnetic and motor applications.</p>
+    <div class="image-grid image-grid--two"><ContentImage src={images.amorphousPlant1} alt="Industrial production equipment" caption="Production equipment and process environment" /><ContentImage src={images.amorphousPlant2} alt="Operator at industrial heat-treatment equipment" caption="Heat-treatment process equipment" /></div>
+    <ContentImage src={images.amorphousRibbon} alt="Ribbon processing machinery" caption="Ribbon processing" />
+  </ContentSection>
+  <ContactCTA />
+</ProductsLayout>

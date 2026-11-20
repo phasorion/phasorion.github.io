@@ -1,0 +1,70 @@
+---
+import ProductsLayout from '../../layouts/ProductsLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import ContentImage from '../../components/ContentImage.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import { contentImages as images } from '../../data/content-images';
+---
+<ProductsLayout title="Nanocrystalline Materials, Cores & Magnetic Components | Phasorion" description="Nanocrystalline ribbon, standard and custom cores, and magnetic components for EMC filtering and high-frequency power applications.">
+  <section class="page-intro nanocrystalline-intro"><div class="container intro-grid">
+    <div><p class="eyebrow">PRODUCTS / NANOCRYSTALLINE</p><h1>Nanocrystalline Materials & Cores</h1><p class="lead">Support compact, efficient magnetic designs through suitable material grades, core geometry and production control.</p><a class="text-link" href="#product-forms">Explore product forms ↓</a></div>
+    <ContentImage src={images.nanoIntro} alt="Nanocrystalline ring cores and magnetic components" priority />
+  </div></section>
+  <nav class="section-nav" aria-label="Nanocrystalline sections"><div class="container"><a href="#material">Material</a><a href="#product-forms">Product forms</a><a href="#customization">Customization</a><a href="#applications">Applications</a><a href="#components">Magnetic components</a></div></nav>
+  <ContentSection id="material" eyebrow="MATERIAL EXPERTISE" title="From amorphous ribbon to nanocrystalline structure" split>
+    <p>Nanocrystalline alloys are soft magnetic materials formed through controlled heat treatment of rapidly quenched amorphous ribbon. Their fine crystalline structure combines low core loss with magnetic properties that can be tailored through annealing.</p>
+    <p>High-permeability grades suit noise suppression applications, while lower-permeability grades offer improved DC bias tolerance and linearity. These characteristics make nanocrystalline cores a versatile choice for magnetic components in power electronics.</p>
+    <ContentImage slot="media" src={images.nanoProcess} alt="Process diagram from molten alloy and ribbon casting to winding, annealing and finishing" caption="Nanocrystalline material and core processing" diagram />
+  </ContentSection>
+  <ContentSection eyebrow="MAGNETIC BEHAVIOR" title="Properties shaped by annealing" tone="soft">
+    <p>Heat treatment influences the magnetic response. The typical B–H loops illustrate different annealing conditions.</p>
+    <div class="image-grid image-grid--two">
+      <ContentImage src={images.nanoLoopNoField} alt="Typical B–H loop for nanocrystalline material annealed without a magnetic field" caption="Typical B–H loop · Annealing without a magnetic field" diagram />
+      <ContentImage src={images.nanoLoopTransverse} alt="Typical B–H loop for nanocrystalline material annealed in a transverse magnetic field" caption="Typical B–H loop · Transverse-field annealing" diagram />
+    </div>
+    <p class="figure-note">Typical illustrations; magnetic behavior depends on material grade, processing and operating conditions.</p>
+    <details class="technical-detail"><summary>Explore the material comparison</summary><ContentImage src={images.nanoMaterialChart} alt="Illustrative comparison of relative permeability and saturation flux density for soft magnetic material families at 1 kHz" caption="Material-family comparison at 1 kHz, typical illustration" diagram /></details>
+  </ContentSection>
+  <ContentSection id="product-forms" eyebrow="PRODUCT FORMS" title="Ribbon, standard cores and custom geometries">
+    <p>The portfolio spans material / ribbon, standard cores and custom cores for different magnetic-component configurations.</p>
+    <div class="image-grid image-grid--three">
+      <ContentImage src={images.nanoStandard} alt="Nanocrystalline bare ribbon and cased standard cores" caption="Material / ribbon and standard ring cores" />
+      <ContentImage src={images.nanoCased} alt="Nanocrystalline cores with different casing and coating options" caption="Cased and coated cores" />
+      <ContentImage src={images.nanoCustom} alt="Rectangular, oval and cut nanocrystalline core geometries" caption="Custom core geometries" />
+    </div>
+  </ContentSection>
+  <ContentSection id="customization" eyebrow="CORE CONFIGURATION" title="Shape and protection options" tone="soft">
+    <p>Alongside standard cores, custom geometries and protective solutions support different product designs. Casing options include PA66 and PBT, with epoxy coating available as an alternative.</p>
+    <div class="configuration-grid">
+      <div><h3>Shape solutions</h3><div class="mini-gallery"><ContentImage src={images.nanoShapeRing} alt="Round core geometry illustration" diagram /><ContentImage src={images.nanoShapeOval} alt="Oval core geometry illustration" diagram /><ContentImage src={images.nanoShapeCustom} alt="Custom multi-opening core geometry illustration" diagram /></div></div>
+      <div><h3>Casing & coating</h3><div class="mini-gallery"><ContentImage src={images.nanoCasing} alt="Exploded view of a core and protective casing" diagram /><ContentImage src={images.nanoCoating} alt="Cutaway illustration of a protected core" diagram /></div></div>
+    </div>
+  </ContentSection>
+  <ContentSection id="applications" eyebrow="APPLICATIONS" title="Power conversion and electromagnetic compatibility">
+    <p>Nanocrystalline cores support EMC filtering, inductive components and high-frequency power conversion.</p>
+    <div class="application-block">
+      <div class="application-heading"><span>01</span><h3>Noise suppression</h3></div>
+      <div class="application-layout"><p>Common-mode cores can be used around inverter and motor circuits to help suppress high-frequency interference.</p><ContentImage src={images.nanoNoiseCircuit} alt="Battery, inverter and motor circuit showing common-mode choke locations" diagram /></div>
+      <details class="technical-detail"><summary>View the waveform comparison</summary><div class="image-grid image-grid--two"><ContentImage src={images.nanoNoiseWithout} alt="Typical noise waveform without a nanocrystalline core" caption="Without a nanocrystalline core" diagram /><ContentImage src={images.nanoNoiseWith} alt="Typical noise waveform with a nanocrystalline core" caption="With a nanocrystalline core" diagram /></div><p class="figure-note">Illustrative comparison; results depend on the circuit and test conditions.</p></details>
+    </div>
+    <div class="application-block">
+      <div class="application-heading"><span>02</span><h3>Inverter–motor systems</h3></div>
+      <div class="application-layout"><div><p>Lower-permeability cores can be combined with common-mode filter cores in inverter–motor or generator systems to help reduce harmonics and electromagnetic interference.</p><p>Application areas include current transformers, electronic filtering, energy storage and motor spindle protection.</p></div><ContentImage src={images.nanoMotor} alt="Illustration of a magnetic ring in an inverter-to-motor cable system" diagram /></div>
+    </div>
+    <div class="application-block">
+      <div class="application-heading"><span>03</span><h3>EMC in power electronics</h3></div>
+      <div class="application-layout"><p>Common-mode chokes address interference associated with high-frequency switching circuits, including those in electric-vehicle power systems.</p><ContentImage src={images.nanoEmc} alt="Diagram showing conducted and radiated noise paths in a battery, inverter and electric-machine system" diagram /></div>
+    </div>
+    <div class="application-block">
+      <div class="application-heading"><span>04</span><h3>Common-mode chokes for EMI filters</h3></div>
+      <div class="application-layout"><p>Nanocrystalline cores provide a material option for the common-mode magnetic components used in EMI filter circuits.</p><ContentImage src={images.nanoChokeCircuit} alt="EMI filter circuit showing coupled common-mode inductors and capacitors" diagram /></div>
+      <details class="technical-detail"><summary>View the choke comparison</summary><div class="image-grid image-grid--two"><ContentImage src={images.nanoChokeComparison} alt="Ferrite and nanocrystalline choke comparison illustration" caption="Ferrite and nanocrystalline choke examples" diagram /><ContentImage src={images.nanoChokeNoise} alt="Typical frequency-versus-noise-level comparison for ferrite and nanocrystalline choke examples" caption="Illustrative noise comparison" diagram /></div><p class="figure-note">The shown examples use different core sizes and winding configurations; they are not a universal product performance specification.</p></details>
+    </div>
+  </ContentSection>
+  <ContentSection id="components" eyebrow="MAGNETIC COMPONENTS" title="Magnetic components for power and EMC applications" tone="soft" split>
+    <p>Filter magnetic components · Inductors · Reactors · Transformer cores / magnetic components</p>
+    <p>Connect the material and core configuration to the magnetic-component needs of the application.</p>
+    <ContentImage slot="media" src={images.nanoComponents} alt="Selection of bare cores, cased cores and wound magnetic components" />
+  </ContentSection>
+  <ContactCTA />
+</ProductsLayout>

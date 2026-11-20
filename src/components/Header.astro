@@ -1,0 +1,53 @@
+---
+import { navigation } from '../data/navigation';
+const path = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
+---
+<header class="site-header">
+    <div class="header-inner container">
+
+        <a href="/" class="logo">
+            <img src="/images/logo.svg" alt="Phasorion" width="1832" height="655" />
+        </a>
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            >
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+            {navigation.map(({ label, href }) => (
+                <a class="action-text" href={href} aria-current={path === href || (href !== '/' && path.startsWith(href)) ? 'page' : undefined}>{label}</a>
+            ))}
+        </nav>
+
+    </div>
+</header>
+
+<script>
+    const header = document.querySelector('.site-header');
+    const menuToggle = header?.querySelector<HTMLButtonElement>('.menu-toggle');
+    const mainNav = header?.querySelector<HTMLElement>('.main-nav');
+
+    if (menuToggle && mainNav) {
+        const setMenuOpen = (open: boolean) => {
+            mainNav.classList.toggle('is-open', open);
+            menuToggle.classList.toggle('is-active', open);
+            menuToggle.setAttribute('aria-expanded', String(open));
+            menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+        };
+
+        menuToggle.addEventListener('click', () => {
+            setMenuOpen(!mainNav.classList.contains('is-open'));
+        });
+
+        mainNav.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => setMenuOpen(false));
+        });
+    }
+</script>

@@ -1,0 +1,15 @@
+---
+import { navigation } from '../data/navigation';
+---
+<footer>
+  <div class="footer-inner container">
+    <div class="footer-brand">
+      <div class="footer-logo"><img src="/images/logo-white.svg" alt="Phasorion" width="1924" height="624" /></div>
+      <p>Magnetic Materials, Cores and Power Magnetic Components</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer navigation">
+      {navigation.map(({ label, href }) => <a href={href}>{label}</a>)}
+    </nav>
+    <div class="footer-bottom"><p>© 2026 Phasorion. All rights reserved.</p></div>
+  </div>
+</footer>

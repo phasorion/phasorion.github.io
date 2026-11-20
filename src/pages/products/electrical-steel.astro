@@ -1,0 +1,23 @@
+---
+import ProductsLayout from '../../layouts/ProductsLayout.astro';
+import ContentSection from '../../components/ContentSection.astro';
+import ContentImage from '../../components/ContentImage.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import { contentImages as images } from '../../data/content-images';
+---
+<ProductsLayout title="Electrical Steel Materials & Laminations | Phasorion" description="Electrical steel coils, slit strips, cut strips, EI laminations and transformer laminations and cores.">
+  <section class="page-intro"><div class="container intro-grid"><div><p class="eyebrow">PRODUCTS / ELECTRICAL STEEL</p><h1>Electrical Steel Materials & Laminations</h1><p class="lead">Coils, slit strips, cut strips, EI laminations and transformer laminations / cores.</p></div><ContentImage src={images.steelIntro} alt="Electrical steel strip processing" priority /></div></section>
+  <ContentSection eyebrow="MATERIALS" title="Grades and forms for magnetic core designs">
+    <p>Electrical steel, also known as silicon steel, is a soft magnetic material used in laminated cores for electrical equipment.</p>
+    <p>The range includes ultra-thin non-oriented electrical steel in thicknesses of 0.10–0.20 mm, conventional non-oriented grades, and grain-oriented electrical steel in thicknesses of 0.18–0.35 mm. Different grades and thicknesses support selection according to magnetic performance, operating frequency and manufacturing requirements.</p>
+  </ContentSection>
+  <ContentSection eyebrow="PRODUCTS & PROCESSING" title="From full coils to laminations" tone="soft">
+    <div class="image-grid image-grid--three"><ContentImage src={images.steelFull} alt="Full coil of electrical steel" caption="Full coils" /><ContentImage src={images.steelSlit} alt="Electrical steel coils slit to different widths" caption="Slit coils and strips" /><ContentImage src={images.steelStamping} alt="Steel lamination stamping process" caption="Stamped laminations" /></div>
+    <p>Phasorion supplies electrical steel as full coils, slit coils, stamped laminations and assembled cores according to customer drawings and project requirements.</p>
+  </ContentSection>
+  <ContentSection eyebrow="APPLICATIONS" title="Transformer and reactor magnetic cores">
+    <p>Grain-oriented grades suit transformer and reactor designs that direct magnetic flux along the rolling direction.</p>
+    <p class="secondary-copy">Motor stator and rotor laminations are a secondary processing capability.</p>
+  </ContentSection>
+  <ContactCTA />
+</ProductsLayout>

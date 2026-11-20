@@ -1,0 +1,12 @@
+---
+import { products } from '../data/products';
+const currentPath = Astro.url.pathname.replace(/\/$/, '');
+---
+<nav class="products-subnav" aria-label="Product families">
+  <div class="container product-nav">
+    <a href="/products/" aria-current={currentPath === '/products' ? 'page' : undefined}>Overview</a>
+    {products.map(product => (
+      <a href={'/products/' + product.slug + '/'} aria-current={currentPath === '/products/' + product.slug ? 'page' : undefined}>{product.name}</a>
+    ))}
+  </div>
+</nav>

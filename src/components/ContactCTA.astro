@@ -1,0 +1,11 @@
+---
+interface Props { title?: string; }
+const { title = 'Discuss your material, core or magnetic-component requirement.' } = Astro.props;
+---
+<section class="contact-band">
+  <div class="container">
+    <p class="eyebrow">LET’S TALK</p>
+    <h2>{title}</h2>
+    <a class="button" href="/contact/">Request a sample or quotation <span aria-hidden="true">↗</span></a>
+  </div>
+</section>

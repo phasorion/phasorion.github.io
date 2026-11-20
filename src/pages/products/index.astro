@@ -1,0 +1,45 @@
+---
+import ProductsLayout from '../../layouts/ProductsLayout.astro';
+import { products } from '../../data/products';
+import ContentSection from '../../components/ContentSection.astro';
+import ContentImage from '../../components/ContentImage.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import { contentImages as images } from '../../data/content-images';
+const visuals = [images.nanoIntro, images.steelWarehouse, images.overviewAmorphous];
+const alts = ['Nanocrystalline cores and magnetic components', 'Electrical steel coils in a warehouse', 'Amorphous magnetic core forms'];
+---
+<ProductsLayout title="Magnetic Materials & Products | Phasorion" description="Explore nanocrystalline, electrical steel and amorphous products by material family, product form and application.">
+  <section class="page-intro products-overview-intro"><div class="container intro-grid">
+    <div><p class="eyebrow">PRODUCTS / OVERVIEW</p><h1>Materials, cores and magnetic components</h1><p class="lead">Products organized by material family, product form and application.</p></div>
+    <ContentImage src={images.productOverview} alt="Ribbon materials and magnetic core forms from the product portfolio" priority />
+  </div></section>
+  <section class="editorial-section editorial-section--soft product-directory">
+    <div class="container">
+      <p class="eyebrow">OUR PORTFOLIO</p>
+      <h2>Product Portfolio</h2>
+      <p class="lead">Explore product forms and applications across our three material families.</p>
+      {products.map((product, index) => (
+        <article class="product-directory-row">
+          <a href={'/products/' + product.slug + '/'} aria-label={'Explore ' + product.name}>
+            <ContentImage src={visuals[index]} alt={alts[index]} />
+          </a>
+          <div class="product-directory-copy">
+            <p class="eyebrow">0{index + 1}{index === 0 ? ' / PRIMARY FOCUS' : ''}</p>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+            <div class="product-directory-details">
+              <div><h4>Product forms</h4><ul>{product.forms.map(form => <li>{form}</li>)}</ul></div>
+              <div><h4>Applications</h4><p>{product.applications}</p></div>
+            </div>
+            <a class="text-link" href={'/products/' + product.slug + '/'}>Explore {product.name} <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+  <ContentSection eyebrow="PRODUCT SELECTION" title="Start from your application">
+    <p>Product form → Application → Selectable parameters → Capability review → Inquiry</p>
+    <p>An application, drawing or target value can be a useful starting point for a technical discussion.</p>
+  </ContentSection>
+  <ContactCTA />
+</ProductsLayout>

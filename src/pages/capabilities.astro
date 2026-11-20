@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContentSection from '../components/ContentSection.astro';
+import ContentImage from '../components/ContentImage.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import { contentImages as images } from '../data/content-images';
+---
+<BaseLayout title="Engineering, Manufacturing & Quality | Phasorion" description="Application support, material selection, engineering, manufacturing control, quality and project execution for magnetic products.">
+  <section class="page-intro capabilities-intro"><div class="container intro-grid"><div><p class="eyebrow">CAPABILITIES / OVERVIEW</p><h1>A Practical Path from Requirement to Supply</h1><p class="lead">Connect material selection, component engineering, manufacturing control and delivery around your application.</p></div><ContentImage src={images.capabilityOverview} alt="An engineer working with industrial equipment" priority /></div></section>
+  <div class="process-strip"><div class="container"><span>Requirement definition</span><span>Material & product selection</span><span>Engineering & sampling</span><span>Validation</span><span>Production & delivery</span></div></div>
+  <ContentSection eyebrow="01 / APPLICATION SUPPORT" title="Start with the application" split>
+    <ul class="editorial-list"><li>Application and requirement review</li><li>Material / core selection</li><li>Component configuration support</li><li>Prototyping, testing and design-for-manufacturing</li></ul>
+    <ContentImage slot="media" src={images.applicationSupport} alt="Engineers reviewing a magnetic-component application on screen" />
+  </ContentSection>
+  <ContentSection eyebrow="02 / ENGINEERING" title="Select, configure and validate the right magnetic product" tone="soft" split reverse>
+    <p>Turn application conditions and electrical targets into a clear material, core or component proposal.</p><p>Focus on usable inputs, traceable assumptions and sample-based validation.</p>
+    <ContentImage slot="media" src={images.engineering} alt="Engineers discussing core geometry and a component design" />
+  </ContentSection>
+  <ContentSection eyebrow="03 / MANUFACTURING" title="Connect product design and production" split>
+    <p>Process development · Production control · Traceability · Continuous improvement</p><ContentImage slot="media" src={images.manufacturing} alt="Illustration of automated component handling in manufacturing" />
+  </ContentSection>
+  <ContentSection eyebrow="04 / QUALITY & DELIVERY" title="Inspection and validation" tone="soft" split reverse>
+    <p>Inspection and validation connect the product requirements with the finished magnetic product.</p><ContentImage slot="media" src={images.quality} alt="An engineer inspecting a core with measuring equipment" />
+  </ContentSection>
+  <ContentSection eyebrow="05 / PROJECT EXECUTION" title="One technical and commercial interface" split>
+    <p>Requirement confirmation · Sample plan · Validation milestones · Quotation · Ramp-up · Ongoing supply</p><ContentImage slot="media" src={images.projectExecution} alt="A project team reviewing a production schedule" />
+  </ContentSection>
+  <ContactCTA />
+</BaseLayout>

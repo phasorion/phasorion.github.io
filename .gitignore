@@ -1,0 +1,40 @@
+# build output
+dist/
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# Local content review and visual checks
+.work/
+
+# Original inputs and internal records (keep local)
+/content-input/
+/archive/
+/docs/
+/V2-PRODUCT-FOCUS.txt.txt
+.env.*
+
+# Local development guidance and editor settings
+/AGENTS.md
+/CLAUDE.md
+/.vscode/
+/public/images/about.jpg

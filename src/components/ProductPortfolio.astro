@@ -1,0 +1,19 @@
+---
+import { products } from '../data/products';
+import ContentImage from './ContentImage.astro';
+import { contentImages as images } from '../data/content-images';
+const visuals = [images.nanoCased, images.homeSteel, images.homeAmorphous];
+---
+<div class="material-portfolio">
+  {products.map((product, index) => (
+    <article class="material-card">
+      <a class="material-image-link" href={'/products/' + product.slug + '/'} aria-label={'Explore ' + product.name}>
+        <ContentImage src={visuals[index]} alt={['Nanocrystalline cores with casing and coating options', 'Full electrical steel coil', 'Amorphous motor core'][index]} />
+      </a>
+      <p class="material-number">0{index + 1}{index === 0 ? ' / PRIMARY FOCUS' : ''}</p>
+      <h3><a href={'/products/' + product.slug + '/'}>{product.name}</a></h3>
+      <p>{product.description}</p>
+      <a class="text-link" href={'/products/' + product.slug + '/'}>Explore {product.name} <span aria-hidden="true">↗</span></a>
+    </article>
+  ))}
+</div>
